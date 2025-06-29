@@ -1,0 +1,43 @@
+body {
+    background-color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    align-items: center;
+}
+
+#cargar-dinero, #carrito-section {
+    text-align: center;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+#carrito {
+    background-color:rgb(169, 207, 199)
+    ;
+    font-size: 15px;
+    padding: 10px;
+    border-radius: 10px;
+
+}
+
+h1 {
+    text-align: center;
+    font-weight: bolder;
+    font-size: 50px;
+    text-shadow: 2px 2px 4px grey;
+    color: black;
+}
+
+button {
+    background-color: rgb(11, 61, 78);
+    color: white;
+    font-weight: bold;
+    text-shadow: 2px 2px 2px black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}

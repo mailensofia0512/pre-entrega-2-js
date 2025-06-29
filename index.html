@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulador Carrito de Compras</title>
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+  <h1>Carrito de Compras</h1>
+
+  <section id="cargar-dinero">
+    <h2>Saldo actual: $<span id="saldo">0</span></h2>
+
+    <div class="botones">
+      <h3>Cargar Dinero</h3>
+      <button data-monto="100">Cargar $100</button>
+      <button data-monto="500">Cargar $500</button>
+      <button data-monto="1000">Cargar $1000</button>
+    </div>
+  </section>
+
+  <section class="productos">
+    <h3>Productos disponibles</h3>
+    <div class="producto">
+      <p>CD Taylor Swift - $500</p>
+      <button class="comprar" data-nombre="CD Taylor Swift" data-precio="500">Comprar</button>
+    </div>
+    <div class="producto">
+      <p>Remera Eras Tour - $800</p>
+      <button class="comprar" data-nombre="Remera Eras Tour" data-precio="800">Comprar</button>
+    </div>
+    <div class="producto">
+      <p>Poster - $200</p>
+      <button class="comprar" data-nombre="Poster" data-precio="200">Comprar</button>
+    </div>
+  </section>
+
+  <section id="carrito-section">
+    <h3>Carrito:</h3>
+    <ul id="carrito"></ul>
+    <button id="vaciar">Vaciar Carrito</button>
+  </section>
+
+  <script src="app.js"></script>
+</body>
+</html>
