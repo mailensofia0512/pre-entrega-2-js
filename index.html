@@ -1,13 +1,15 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
   <meta charset="UTF-8">
   <title>Simulador Carrito de Compras</title>
   <!-- link css -->
   <link rel="stylesheet" href="./css/main.css">
   <!-- link java script -->
-   <script src="./js/main.js" defer></script>
+  <script src="./js/main.js" defer></script>
 </head>
+
 <body>
   <h1>Carrito de Compras</h1>
 
@@ -26,24 +28,26 @@
     <h3>Productos disponibles</h3>
     <div class="producto">
       <p>CD Taylor Swift - $500</p>
-      <button class="comprar" data-nombre="CD Taylor Swift" data-precio="500">Comprar</button>
+      <button class="comprar" data-nombre="CD Taylor Swift" data-precio="500"> Agregar </button>
     </div>
     <div class="producto">
       <p>Remera Eras Tour - $800</p>
-      <button class="comprar" data-nombre="Remera Eras Tour" data-precio="800">Comprar</button>
+      <button class="comprar" data-nombre="Remera Eras Tour" data-precio="800"> Agregar </button>
     </div>
     <div class="producto">
       <p>Poster - $200</p>
-      <button class="comprar" data-nombre="Poster" data-precio="200">Comprar</button>
+      <button class="comprar" data-nombre="Poster" data-precio="200"> Agregar </button>
     </div>
   </section>
 
   <section id="carrito-section">
     <h3>Carrito:</h3>
     <ul id="carrito"></ul>
+    <div id="mensaje" class="oculto"></div>
     <button id="vaciar">Vaciar Carrito</button>
   </section>
 
-  
+
 </body>
+
 </html>

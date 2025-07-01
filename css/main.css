@@ -41,3 +41,21 @@ button {
     border-radius: 5px;
     cursor: pointer;
 }
+
+#mensaje {
+  background-color: #ffdddd;
+  color: #a80000;
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid #a80000;
+  border-radius: 8px;
+  display: none;
+}
+
+.producto {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}

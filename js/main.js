@@ -11,59 +11,68 @@ const botonVaciar = document.getElementById("vaciar");
 
 // Función para mostrar saldo
 function actualizarSaldo() {
-  saldoSpan.textContent = saldo;
+    saldoSpan.textContent = saldo;
 }
 
 // Función para agregar producto al carrito en pantalla
 function agregarAlCarrito(producto) {
-  const li = document.createElement("li");
-  li.textContent = `${producto.nombre} - $${producto.precio}`;
-  carritoLista.appendChild(li);
+    const li = document.createElement("li");
+    li.textContent = `${producto.nombre} - $${producto.precio}`;
+    carritoLista.appendChild(li);
 }
 
 // Función para guardar el carrito en localStorage
 function guardarCarrito() {
-  localStorage.setItem("carrito", JSON.stringify(carrito));
+    localStorage.setItem("carrito", JSON.stringify(carrito));
 }
 
-// Inicializar interfaz
+// Inicializar saldo y carrito
 actualizarSaldo();
 carrito.forEach(producto => agregarAlCarrito(producto));
 
 // Cargar dinero
 botonesCargar.forEach(boton => {
-  boton.addEventListener("click", () => {
-    const monto = parseInt(boton.dataset.monto);
-    saldo += monto;
-    actualizarSaldo();
-    localStorage.setItem("saldo", saldo);
-  });
+    boton.addEventListener("click", () => {
+        const monto = parseInt(boton.dataset.monto);
+        saldo += monto;
+        actualizarSaldo();
+        localStorage.setItem("saldo", saldo);
+    });
 });
+// Mostrar mensaje
+  function mostrarMensaje(texto) {
+                const mensajeDiv = document.getElementById("mensaje");
+                mensajeDiv.textContent = texto;
+                mensajeDiv.style.display = "block";
+            }
 
 // Comprar producto
 botonesComprar.forEach(boton => {
-  boton.addEventListener("click", () => {
-    const precio = parseInt(boton.dataset.precio);
-    const nombre = boton.dataset.nombre;
+    boton.addEventListener("click", () => {
+        const precio = parseInt(boton.dataset.precio);
+        const nombre = boton.dataset.nombre;
 
-    if (saldo >= precio) {
-      saldo -= precio;
-      actualizarSaldo();
-      localStorage.setItem("saldo", saldo);
+        if (saldo >= precio) {
+            saldo -= precio;
+            actualizarSaldo();
+            localStorage.setItem("saldo", saldo);
 
-      const producto = { nombre, precio };
-      carrito.push(producto);
-      guardarCarrito();
-      agregarAlCarrito(producto);
-    } else {
-      alert("No tenés saldo suficiente para comprar esto.");
-    }
-  });
+            const producto = { nombre, precio };
+            carrito.push(producto);
+            guardarCarrito();
+            agregarAlCarrito(producto);
+        }
+         else {
+          mostrarMensaje("Saldo insuficiente para comprar este producto.");
+        };
+    });
 });
+
 
 // Vaciar carrito
 botonVaciar.addEventListener("click", () => {
-  carrito = [];
-  localStorage.removeItem("carrito");
-  carritoLista.innerHTML = "";
+    carrito = [];
+    localStorage.removeItem("carrito");
+    carritoLista.innerHTML = "";
 });
+
